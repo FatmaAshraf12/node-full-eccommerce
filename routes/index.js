@@ -6,9 +6,8 @@ router.get("/", function (req, res, next) {
   Products.find({}, (error, doc) => {
     if (error) console.log("found error");
 
-    console.log(doc);
+    res.render("index", {title: "shopping cart", products: doc});
   });
-  res.render("index", {title: "shopping cart"});
 });
 
 module.exports = router;
